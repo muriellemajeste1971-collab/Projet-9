@@ -1,6 +1,6 @@
 
 @isTest
-private class OrderAfterUpdateTriggerTest {
+private class AccountTriggerTest {
 
     @isTest
     static void test01_singleAction() {

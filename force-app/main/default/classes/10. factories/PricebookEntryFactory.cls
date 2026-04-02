@@ -8,7 +8,7 @@ public with sharing class PricebookEntryFactory {
                 PricebookEntry pe = new PricebookEntry(
                     Pricebook2Id = pbId,
                     Product2Id = p.Id,
-                    UnitPrice = 10000,
+                    UnitPrice = 100,
                     IsActive = true
                 );
                 pricebookEntries.add(pe);
