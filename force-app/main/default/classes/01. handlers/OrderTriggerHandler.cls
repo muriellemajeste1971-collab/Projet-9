@@ -5,10 +5,12 @@ public with sharing class OrderTriggerHandler {
                 (Map<Id, Order>) Trigger.oldMap, 
                 (Map<Id, Order>) Trigger.newMap
             );
-            OrderService.handleBeforeUpdate(
+        }  
+         if (Trigger.isAfter && Trigger.isUpdate) {
+            OrderDomain.validateAfterUpdate(
                 (Map<Id, Order>) Trigger.oldMap,
                 (Map<Id, Order>) Trigger.newMap
             );
-        }      
+        }    
     }
 }

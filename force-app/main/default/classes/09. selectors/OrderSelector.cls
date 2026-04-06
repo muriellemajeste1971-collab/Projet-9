@@ -8,4 +8,13 @@ public with sharing class OrderSelector {
             WHERE Id IN :orderIds
         ];
     }
+
+    public static List<Order> selectByAccountIds(List<Id> accountIds) {
+        
+        return [
+            SELECT Id, AccountId, ContractId, ShippingCountry, Status, TotalAmount, ShipmentCost__c, NetAmount__c
+            FROM Order
+            WHERE AccountId IN :accountIds
+        ];
+    }
 }

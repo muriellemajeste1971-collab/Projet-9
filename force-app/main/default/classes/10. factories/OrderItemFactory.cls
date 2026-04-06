@@ -12,7 +12,7 @@ public with sharing class OrderItemFactory {
                             OrderId = o.Id,
                             PricebookEntryId = entries[i].Id,
                             Product2Id = products[i].Id,
-                            Quantity = 3,
+                            Quantity = 1,
                             UnitPrice = entries[i].UnitPrice
                         );
 

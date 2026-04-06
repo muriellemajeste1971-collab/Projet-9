@@ -16,12 +16,7 @@
             return accounts;
         }
 
-        // Create dummy opportunities for unit tests
-        public static List<Opportunity> createOpportunities(Integer numberOfOpportunities, List<Id> accountIds) { 
-
-            List<Opportunity> opportunities = OpportunityFactory.assemble(numberOfOpportunities, accountIds);
-            return opportunities;
-        }
+  
 
         // Create dummy orders for Unit Tests
         public static List<Order> createOrders(Integer numberOfOrders, Integer numberOfProducts,  List<Id> accountIds) {
@@ -52,6 +47,13 @@
             // 6. OrderItems
             List<OrderItem> items = OrderItemFactory.assemble(orders, numberOfProducts, entries, products);
             insert items;
+
+                List<Id> orderIds = new List<Id>();
+                    for (Order o : orders) {
+                        orderIds.add(o.Id);     
+                    }
+
+            orders = OrderSelector.selectByIds(orderIds);
 
             return orders;
         }		       

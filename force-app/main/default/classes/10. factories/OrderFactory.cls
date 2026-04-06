@@ -12,7 +12,6 @@ public with sharing class OrderFactory {
                     ContractId = c.Id,
                     Pricebook2Id = pbId,
                     Status = 'Draft',
-                    ShipmentCost__c = 10,
                     EffectiveDate = Date.today()
                     );
                 orders.add(o);
