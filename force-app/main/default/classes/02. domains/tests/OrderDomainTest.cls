@@ -24,7 +24,6 @@ private class OrderDomainTest {
                     oldMap.put(o.Id, oldO);
                     newMap.put(o.Id, newO);
             }
-
         // WHEN
         Test.startTest();
             OrderDomain.validateBeforeUpdate(oldMap, newMap);   
